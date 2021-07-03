@@ -1,0 +1,14 @@
+{
+  "name": "smarthome",
+  "version": "1.0.0",
+  "description": "server for my myHome",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "3nzoo",
+  "license": "ISC",
+  "dependencies": {
+    "ewelink-api": "3.1.1"
+  }
+}
