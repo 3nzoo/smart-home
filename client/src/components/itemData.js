@@ -15,7 +15,7 @@ let itemData = [
         status:'...',
         toggle: async () =>{
             await axios.get(`http://localhost:${port}/laptop`);
-            console.log('harddrive switched');
+            console.log('laptop switched');
         }  
     },
     {
