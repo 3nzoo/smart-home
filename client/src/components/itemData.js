@@ -6,6 +6,7 @@ import charger from '../images/iPhone-charger.png';
 import ref from '../images/8944748625950.png'
 import screen from '../images/https___aoc-pim.s3.amazonaws.com_ag493ucx_AG492UCX_FTL_HERO_A.png'
 import axios from 'axios'
+const port = process.env.PORT || 4005;
 
 let itemData = [
     {
@@ -13,7 +14,7 @@ let itemData = [
         title:'Laptop',
         status:'...',
         toggle: async () =>{
-            await axios.get('http://localhost:4005/laptop');
+            await axios.get(`http://localhost:${port}/laptop`);
             console.log('harddrive switched');
         }  
     },
@@ -22,7 +23,7 @@ let itemData = [
         title:'lamp',
         status:'...',
         toggle: async () =>{
-            await axios.get('http://localhost:4005/lamp');
+            await axios.get(`http://localhost:${port}/lamp`);
             console.log('lamp switched');
         }
     },
@@ -31,7 +32,7 @@ let itemData = [
         title:'hard drive',
         status:'...',
         toggle: async () =>{
-            await axios.get('http://localhost:4005/harddrive');
+            await axios.get(`http://localhost:${port}/harddrive`);
             console.log('harddrive switch');
         }
     },
@@ -41,7 +42,7 @@ let itemData = [
         title:'Ref',
         status:'...',
         toggle: async () =>{
-            await axios.get('http://localhost:4005/ref');
+            await axios.get(`http://localhost:${port}/ref`);
             console.log('Ref switched');
         }
     },
@@ -50,7 +51,7 @@ let itemData = [
         title:'Mac Charger',
         status:'...',
         toggle: async () =>{
-            await axios.get('http://localhost:4005/mCharger');
+            await axios.get(`http://localhost:${port}/mCharger`);
             console.log('Mac Charger switched');
         }
     },
@@ -59,7 +60,7 @@ let itemData = [
         title:'Charger',
         status:'...',
         toggle: async () =>{
-            await axios.get('http://localhost:4005/charger');
+            await axios.get(`http://localhost:${port}/charger`);
             console.log('charger switched');
         }
     },
@@ -68,15 +69,14 @@ let itemData = [
         title:'Monitor',
         status:'...',
         toggle: async () =>{
-            await axios.get('http://localhost:4005/screen');
+            await axios.get(`http://localhost:${port}/screen`);
             console.log('Monitor switched');
         }
     },
 ]
 
-
 async function getItems(){
-    const devices = await axios.get('http://localhost:4005/all');
+    const devices = await axios.get(`http://localhost:${port}/all`);
     devices.data.map((item) =>{
          const newItem = item.name.toLowerCase().replace(/\s/g,'')
          return itemData.map(current =>{
