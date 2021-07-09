@@ -6,9 +6,9 @@
   "engines": {"node": ">=14"},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node server.js ",
     "client": "npm start --prefix client",
-    "start": "concurrently \"npm run server\" \"npm run build --prefix client\""
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "3nzoo",
   "license": "ISC",
