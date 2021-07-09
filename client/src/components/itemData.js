@@ -15,7 +15,7 @@ let itemData = [
         status:'...',
         toggle: async () =>{
             await axios.get(`http://localhost:${port}/laptop`);
-            console.log('laptop switched');
+            console.log('laptop switched',port);
         }  
     },
     {
@@ -91,7 +91,7 @@ async function getItems(){
         })
     });
 
-    console.log(itemData)
+    console.log(itemData, port)
 }
 
 getItems();

@@ -32,7 +32,6 @@ export default function TitlebarImageList() {
       <ImageList rowHeight={180} className={classes.imageList}>
         <ImageListItem key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader component="div"><h1>SmartHome </h1></ListSubheader>
-       
         </ImageListItem>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
