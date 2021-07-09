@@ -4,6 +4,7 @@ const newDevice = require('./config/keys');
 const app = express();
 const port = process.env.PORT || 4005
 const cors = require('cors');
+const path = require('path');
 
 const connection = new ewelink({
   phoneNumber: require('./config/keys').phoneNumber,
