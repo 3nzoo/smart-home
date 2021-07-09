@@ -14,7 +14,7 @@ let itemData = [
         title:'Laptop',
         status:'...',
         toggle: async () =>{
-            await axios.get(`http://localhost:${port}/laptop`);
+            await axios.get(`/laptop`);
             console.log('laptop switched',port);
         }  
     },
@@ -23,7 +23,7 @@ let itemData = [
         title:'lamp',
         status:'...',
         toggle: async () =>{
-            await axios.get(`http://localhost:${port}/lamp`);
+            await axios.get(`/lamp`);
             console.log('lamp switched');
         }
     },
@@ -32,7 +32,7 @@ let itemData = [
         title:'hard drive',
         status:'...',
         toggle: async () =>{
-            await axios.get(`http://localhost:${port}/harddrive`);
+            await axios.get(`/harddrive`);
             console.log('harddrive switch');
         }
     },
@@ -42,7 +42,7 @@ let itemData = [
         title:'Ref',
         status:'...',
         toggle: async () =>{
-            await axios.get(`http://localhost:${port}/ref`);
+            await axios.get(`http://localhost/ref`);
             console.log('Ref switched');
         }
     },
@@ -76,7 +76,7 @@ let itemData = [
 ]
 
 async function getItems(){
-    const devices = await axios.get(`http://localhost:${port}/all`);
+    const devices = await axios.get(`/all`);
     devices.data.map((item) =>{
          const newItem = item.name.toLowerCase().replace(/\s/g,'')
          return itemData.map(current =>{
