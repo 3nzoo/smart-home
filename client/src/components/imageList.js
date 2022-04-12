@@ -17,12 +17,10 @@ const useStyles = makeStyles((theme) => ({
   imageList: {
     width: 550,
   },
-  itemOff:{
-      opacity:.25,
+  itemOff: {
+    opacity: 0.25,
   },
-
 }));
-
 
 export default function TitlebarImageList() {
   const classes = useStyles();
@@ -30,20 +28,19 @@ export default function TitlebarImageList() {
   return (
     <div className={classes.root}>
       <ImageList rowHeight={180} className={classes.imageList}>
-        <ImageListItem key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div"><h1>SmartHome </h1></ListSubheader>
+        <ImageListItem key='Subheader' cols={2} style={{ height: 'auto' }}>
+          <ListSubheader component='div'>
+            <h1>SmartHome </h1>
+          </ListSubheader>
         </ImageListItem>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
             <img src={item.img} onClick={item.toggle} alt={item.title} />
             <ImageListItemBar
-                
               title={item.title.toUpperCase()}
               subtitle={<span>Status: {item.status}</span>}
-              
             />
           </ImageListItem>
-
         ))}
       </ImageList>
     </div>
